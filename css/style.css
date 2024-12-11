@@ -1,0 +1,117 @@
+:root{
+    --main-color:#26727c;
+}
+body{
+    background-color: var(--main-color);
+    font-family: "Exo", sans-serif;
+}
+.add-task{
+    background-color: var(--main-color);
+    padding: 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+}
+.form-control:focus{
+    box-shadow: 0 0 0 5px #9361F5;
+}
+.task-container .icon{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+.task-container .task-name{
+    cursor: pointer;
+    position: relative;
+
+}
+.task-container .task-name::after{
+    content: 'Click To Completed';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 8px;
+    text-wrap: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition:all .3s;
+
+}
+.task-container .task-name:hover::after{
+    opacity: 1;
+    
+
+
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    border-width: 3px 2px 3px 2px;
+    border-style: solid dotted solid dotted;
+    border-color: #de3500 rgba(255, 255, 255,0.3) #fff rgba(151, 107, 93, 0.3);
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: 1s rotate linear infinite;
+ }
+ .loader:before , .loader:after{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color:#fff;
+    transform: translate(-10px, 19px) rotate(-35deg);
+  }
+ .loader:after {
+    border-color: #de3500 #0000 #0000 #0000 ;
+    transform: translate(32px, 3px) rotate(-35deg);
+  }
+   @keyframes rotate {
+    100%{    transform: rotate(360deg)}
+  }
+  .loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #progress-Bar{
+    height: 10px;
+    background-color: #286972;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  #progress-Bar #progress{
+    height: inherit;
+    background-color: #1b3c41;
+    transition: width .7s;
+   width: 0%;
+  }
+  .status-number{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+  }
